@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Button Page</title>
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      background: #f0f0f0;
+      font-family: sans-serif;
+    }
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      background: #ffb6c1;
+      transition: 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button onclick="goToPage()">You love me</button>
+    <button id="runaway">You don't love me</button>
+  </div>
+
+  <script>
+    function goToPage() {
+      window.open('second.html', '_blank');
+    }
+
+    const btn = document.getElementById('runaway');
+    btn.addEventListener('mouseover', () => {
+      const x = Math.random() * window.innerWidth * 0.8;
+      const y = Math.random() * window.innerHeight * 0.8;
+      btn.style.position = 'absolute';
+      btn.style.left = `${x}px`;
+      btn.style.top = `${y}px`;
+    });
+  </script>
+</body>
+</html>
